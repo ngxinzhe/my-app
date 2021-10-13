@@ -7,7 +7,7 @@
 
     <img id="pic" alt="company logo" src="./assets/comLogo.png">
     <h1>Welcome to  {{name}} </h1>
-    <h2>Think Big, Think abc Different.</h2>
+    <h2>Think  Big, Think ddd Different.</h2>
 
     <form>
     <label>Username:</label>
