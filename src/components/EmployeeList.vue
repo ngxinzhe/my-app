@@ -6,6 +6,8 @@
     <br>
     <router-link to="/second">SECOND PAGE</router-link>
     <br>
+    <router-link to="/api">API PAGE</router-link>
+    <br>
     <router-link to="/bootstrap">BOOTSTRAP PAGE</router-link>
     <hr>
     <br>

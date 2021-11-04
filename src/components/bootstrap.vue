@@ -1,11 +1,13 @@
 <template>
   <div>
-    <h1>*** HOME PAGE***</h1>
-    <router-link to="/">MAIN PAGE</router-link>
+    <h1>*** BOOTSTRAP PAGE***</h1>
+    <router-link to="/">HOME PAGE</router-link>
     <br>
     <router-link to="/second">SECOND PAGE</router-link>
     <br>
     <router-link to="/api">API PAGE</router-link>
+    <br>
+    <router-link to="/bootstrap">BOOTSTRAP</router-link>
     <br>
     <hr>
     <br>

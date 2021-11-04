@@ -2,6 +2,8 @@
 <div>
 
   <h1>*** HOME PAGE***</h1>
+  <router-link to="/">HOMeeE PAGE</router-link>
+  <br>
   <router-link to="/second">SECOND PAGE</router-link>
   <br>
   <router-link to="/api">API PAGE</router-link>
