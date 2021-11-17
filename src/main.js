@@ -11,6 +11,7 @@ import home from "./components/home";
 import second from "./components/second";
 import api from "./components/EmployeeList";
 import bootstrap from "./components/bootstrap";
+import loginpage from "./components/loginpage";
 
 
 Vue.use(VueRouter);
@@ -19,7 +20,7 @@ Vue.use(IconsPlugin)
 
 const routes = [
   {
-    path:'/', component: home
+    path:'/', component: loginpage
   },
   {
     path: '/second', component: second
@@ -29,6 +30,9 @@ const routes = [
   },
   {
     path: '/bootstrap',component: bootstrap
+  },
+  {
+    path: '/home',component: home
   }
 ];
 

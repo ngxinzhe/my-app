@@ -11,7 +11,7 @@ export const store = new Vuex.Store({
             {name: 'Apple', price: 40},
             {name: 'Grape', price: 60},
             {name: 'Orange', price: 80}
-        ]
+        ],
     },
     getters: {
         saleProducts: (state) => {

@@ -10,6 +10,9 @@
   <br>
   <router-link to="/bootstrap">BOOTSTRAP PAGE</router-link>
   <br>
+  <br>
+  <router-link to="/">loginpage</router-link>
+  <br>
   <hr>
   <br>
   <product-list-one></product-list-one>
