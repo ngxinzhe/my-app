@@ -33,12 +33,7 @@
 
 <script>
 
-
 import axios from "axios";
-
-
-
-
 
 export default {
   name: 'loginpage',
@@ -65,21 +60,22 @@ export default {
 
 mounted()
 {
-    axios.get('http://localhost:8081/#/rest/api/2/dashboard',{
-         method: 'GET',
-         headers: {
+    axios.get('https://innoqode.atlassian.net/rest/api/2/search?jql=assignee="Ng Xin Zhe"',{
+
+  method: 'GET',
+  headers: {
     'Authorization': `Basic ${Buffer.from(
-      'xinzhe.ng@innoqode.com:KNDbPTela90ZzPW8ZX9nD8BF'
+    'xinzhe.ng@innoqode.com:KNDbPTela90ZzPW8ZX9nD8BF'
     ).toString('base64')}`,
     'Accept': 'application/json'
   }
-    })
+})
 
-    .then(response=>{
-    console.log(
-        response.data
-     
-    );
+.then(response=>{
+
+ console.log(
+response.data
+);
    
 })
 
@@ -89,7 +85,6 @@ mounted()
 };
 
 </script>
-
 
 
 
