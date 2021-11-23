@@ -33,7 +33,8 @@
 
 <script>
 
-import axios from "axios";
+import {get} from '../store/utils/api.js'
+import {search} from '../store/urls.js'
 
 export default {
   name: 'loginpage',
@@ -50,38 +51,15 @@ export default {
   },
 
   methods:{
-      
-      pop:function(){
-
+       pop:function(){
            alert("Login success ,  USERNAME:  "+this.userName+"   PASSWORD:   "+this.passWord);
       }
+  },
 
-},
+  mounted(){
+      get(search)
 
-mounted()
-{
-    axios.get('https://innoqode.atlassian.net/rest/api/2/search?jql=assignee="Ng Xin Zhe"',{
-
-  method: 'GET',
-  headers: {
-    'Authorization': `Basic ${Buffer.from(
-    'xinzhe.ng@innoqode.com:KNDbPTela90ZzPW8ZX9nD8BF'
-    ).toString('base64')}`,
-    'Accept': 'application/json'
   }
-})
-
-.then(response=>{
-
- console.log(
-response.data
-);
-   
-})
-
-.then(text => console.log(text))
-.catch(err => console.error(err));
-}
 };
 
 </script>
@@ -174,13 +152,4 @@ input{
   
 }
 
-#button1{
-  margin-left:20px;
-  margin-top:15px;
-  padding-left:15px;
-  padding-right:15px;
-  
-  
-}
-
-</style>
+#button1{ 
