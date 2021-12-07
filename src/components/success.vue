@@ -11,7 +11,9 @@
 </template>
 
 <script>
-import axios from 'axios'
+//import axios from 'axios'
+import {post} from '../store/utils/api'
+import {tokenExchange} from '../store/urls'
 
 export default {
   name: 'success',
@@ -43,12 +45,17 @@ export default {
               "redirect_uri": "https://localhost:8080/success"
           };
 
-          axios.post('https://auth.atlassian.com/oauth/token',data,header
+          
+
+          post(tokenExchange,data,header
           ).then(res=>{console.log(res.data)          
           this.token=res.data.access_token
           this.$store.dispatch('setToken',this.token)
           })
           .catch(error=>{console.log(error)})
+
+         
+
 
 
   }

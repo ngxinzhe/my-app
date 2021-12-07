@@ -21,8 +21,8 @@
 
 <script>
 
-//import {get} from '../store/utils/api.js'
-//import {search} from '../store/urls.js'
+import {get} from '../store/utils/api.js'
+import {search} from '../store/urls.js'
 
 export default {
   name: 'loginpage',
@@ -43,7 +43,7 @@ export default {
   },
 
   mounted() {
-    //get(search)
+    get(search)
     console.log(this.$route.query.code)   
   }
 }

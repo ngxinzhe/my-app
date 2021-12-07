@@ -1,16 +1,13 @@
 import axios from 'axios'
-import env from '../../../env.js'
+
 
 export const service = axios.create({
-    baseURL: env.base_url,
+    
     headers: {
-        'Authorization': `Basic ${Buffer.from(env.jira_token).toString('base64')}`,
         'Accept': 'Application/json'
     }
 
 });
-
-service.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
 
 export function get(url, headers = {}, params = {}) {
     return service({
@@ -25,5 +22,20 @@ export function get(url, headers = {}, params = {}) {
         console.warn(error)
     })
 }
+
+export function post(url, payload, headers = {}) {
+    return service({
+        method: 'POST',
+        url: url,
+        data: payload,
+        responseType: 'json',
+        maxRedirects: 5,
+        withCredentials: false,
+        headers: headers,
+    }).catch(error => {
+        console.warn(error)
+    })
+}
+
 
 

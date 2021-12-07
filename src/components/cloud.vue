@@ -8,7 +8,9 @@
 </template>
 
 <script>
-import axios from 'axios'
+
+import {cloudidExchange} from '../store/urls'
+import {get} from '../store/utils/api'
 
 export default {
   name: 'cloud',
@@ -26,26 +28,18 @@ export default {
   },
 
   mounted() {
-
-        //   const header={
-        //        'Authorization': `Bearer ${this.$store.state.token}`,
-        //        'Accept': 'application/json'
-        //   };
-
-        //   const data={
-        //   }
-          
-           axios.get('https://api.atlassian.com/oauth/token/accessible-resources',{
-               headers:{
-                   Authorization:'Bearer '+this.$store.state.token,
-                   Accept: 'application/json'
-               }
-           }
-          ).then(res=>{console.log(res.data)          
+          const header={
+               'Authorization': `Bearer ${this.$store.state.token}`,
+               'Accept': 'application/json'
+          };
+                
+           get(cloudidExchange,header)
+          .then(res=>{
+            console.log(res.data)          
           })
-          .catch(error=>{console.log(error)})
-
-
+          .catch(error=>{
+            console.log(error)
+          })
   }
 }
 </script>
