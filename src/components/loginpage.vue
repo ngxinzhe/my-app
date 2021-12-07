@@ -1,37 +1,28 @@
 <template>
+
   <div id="background">
     <div>
+
       <img id="pic" alt="company logo" src="../assets/logodesign.png">
+
       <div id="welcomediv">
         <h5 id="welcome1">Project tracker for JIRA.</h5>
-
-      </div>
-      <div id="login">
-        <h5 id="welcome2">Login with jira account</h5>
       </div>
 
-      <form>
-        <label>Username:</label>
+      <form>      
+        <b-button id="button1" v-on:click="authorizeJira" variant="primary">sign in with Atlassian account</b-button>
         <br/>
-        <input type="text" v-model="userName" placeholder="eg:xinzhe">
-        <br/>
-        <label>Password:</label>
-        <br/>
-        <input type="Password" v-model="passWord" placeholder="eg:abc123">
-        <br/>
-
-        <b-button id="button1" v-on:click="pop" variant="primary">LOGIN</b-button>
       </form>
+
     </div>
   </div>
-
 
 </template>
 
 <script>
 
-import {get} from '../store/utils/api.js'
-import {search} from '../store/urls.js'
+//import {get} from '../store/utils/api.js'
+//import {search} from '../store/urls.js'
 
 export default {
   name: 'loginpage',
@@ -40,33 +31,32 @@ export default {
 
   data() {
     return {
-      name1: 'COMPONY',
-      userName: '',
-      passWord: '',
     }
   },
+  
 
   methods: {
-    pop: function () {
-      alert('Login success ,  USERNAME:  ' + this.userName + '   PASSWORD:   ' + this.passWord)
-    }
+      authorizeJira(){
+          window.location.href='https://auth.atlassian.com/authorize?audience=api.atlassian.com&client_id=63k79pW3ajKk93HJxMP6KHcHMiNYiINA&scope=read%3Ame&redirect_uri=https%3A%2F%2Flocalhost%3A8080%2Fsuccess&state=${YOUR_USER_BOUND_VALUE}&response_type=code&prompt=consent'
+      },
+
   },
 
   mounted() {
-    get(search)
-
+    //get(search)
+    console.log(this.$route.query.code)   
   }
 }
-
 </script>
 
 
-<style>
 
+<style>
 #background {
-  background-image: url(../assets/nebula-galaxy.gif);
-  background-size: cover;
-  padding: 20px;
+  background-image: url(../assets/blue.jpg);
+  background-size:cover;
+  padding-top:20px;
+  padding-bottom: 300px;
 
 }
 
@@ -82,28 +72,10 @@ export default {
 
 #welcomediv {
   margin: auto;
-  width: 1200px;
-
+  width: 1000px;
   background-color: black;
   border-radius: 15px;
-  opacity: 0.7;
-}
-
-#welcome2 {
-  text-align: center;
-  color: white;
-  font-family: monospace;
-  background-color: #800000;
-  border-radius: 8px;
-  opacity: 0.7;
-
-}
-
-#login {
-  margin: auto;
-  width: 450px;
-  margin-top: 100px;
-  margin-bottom: 20px;
+  opacity: 0.5;
 }
 
 
@@ -116,8 +88,6 @@ export default {
   margin-left: auto;
   margin-right: auto;
   opacity: 0.9;
-
-
 }
 
 form {
@@ -129,23 +99,10 @@ form {
   border-radius: 30px;
   margin: auto;
   margin-bottom: 100px;
-
 }
 
-label {
-  color: white;
-  margin: 20px;
-
-}
-
-input {
-  width: 300px;
-
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 30px;
-  padding: 8px;
-
+#button1 {
+margin-left:55px;
 }
 
 </style>

@@ -12,6 +12,7 @@ export const store = new Vuex.Store({
             {name: 'Grape', price: 60},
             {name: 'Orange', price: 80}
         ],
+        token:'',
     },
     getters: {
         saleProducts: (state) => {
@@ -29,11 +30,18 @@ export const store = new Vuex.Store({
             state.products.forEach( product => {
                 product.price -= payload
             });
+        },
+        setToken:(state,payload)=>{
+            state.token=payload
         }
     },
     actions: {
         reducePrice: (context, payload) => {
                 context.commit('reducePrice', payload);
+        },
+
+        setToken:(context,payload)=>{
+            context.commit('setToken',payload);
         }
     }
 });
