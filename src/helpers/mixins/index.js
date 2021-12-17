@@ -1,1 +1,1 @@
-export { default as ToastMixin } from "./toastMixin";
+export { default as ToastMixin } from './toastMixin'

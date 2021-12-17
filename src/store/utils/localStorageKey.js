@@ -1,2 +1,2 @@
-export const TOKEN = "TOKEN";
-export const APPID = "APPID";
+export const TOKEN = 'TOKEN'
+export const APPID = 'APPID'
