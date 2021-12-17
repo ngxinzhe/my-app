@@ -16,7 +16,7 @@ export const store = new Vuex.Store({
       return localStorage.getItem(TOKEN)
     },
     getAppID: () => {
-      return localStorage.getItem(APPID);
+      return localStorage.getItem(APPID)
     },
   },
 

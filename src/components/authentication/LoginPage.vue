@@ -2,29 +2,11 @@
   <div id="background">
     <b-container>
       <b-row align-h="center" align-content="center">
-        <img
-          src="../../assets/logodesign.png"
-          style="
-            padding: 30px;
-            width: 400px;
-            height: 150px;
-            border-radius: 50px;
-          "
-        />
+        <img src="logo.png" style="padding: 30px; width: 400px; height: 150px; border-radius: 50px" />
       </b-row>
-      <b-row
-        style="
-          background-color: white;
-          border-radius: 20px;
-          padding: 30px;
-          padding-bottom: 60px;
-        "
-      >
+      <b-row style="background-color: white; border-radius: 20px; padding: 30px; padding-bottom: 60px">
         <b-col>
-          <img
-            src="../../assets/project-management.png"
-            style="width: 100%; height: 500px; border-radius: 30px"
-          />
+          <img src="project-management.png" style="width: 100%; height: 500px; border-radius: 30px" />
         </b-col>
         <b-col>
           <b-container
@@ -44,30 +26,20 @@
               ><h1>Login</h1></b-row
             >
             <br />
-            <b-row align-h="center" align-content="center"
-              ><h4>Why Nebular?</h4>
-            </b-row>
+            <b-row align-h="center" align-content="center"><h4>Why Nebular?</h4> </b-row>
             <b-row align-h="center" align-content="center"
               ><p>
-                Nebular is a jira supported application which help you to track
-                project's status of jira in a view of clear and simple.
+                Nebular is a jira supported application which help you to track project's status of jira in a view of
+                clear and simple.
               </p>
             </b-row>
             <br />
             <br />
-            <b-row
-              align-h="center"
-              align-content="center"
-              style="color: brown; font-size: 14px"
+            <b-row align-h="center" align-content="center" style="color: brown; font-size: 14px"
               ><p>Sign in with Atlassian account to grant access from JIRA.</p>
             </b-row>
             <b-row align-h="center" align-content="center">
-              <b-button
-                id="button1"
-                v-on:click="authorizeJira"
-                variant="primary"
-                style="width: 250px"
-              >
+              <b-button id="button1" variant="primary" style="width: 250px" @click="authorizeJira">
                 sign in with Atlassian account</b-button
               >
             </b-row>
@@ -79,28 +51,28 @@
 </template>
 
 <script>
-import { authorizationURL } from "../../../env";
+import { authorizationURL } from '../../../env'
 
 export default {
-  name: "LoginPage",
+  name: 'LoginPage',
   components: {},
 
   data() {
-    return {};
+    return {}
   },
 
   methods: {
     //go to jira authorization page
     authorizeJira() {
-      window.location.href = authorizationURL;
+      window.location.href = authorizationURL
     },
   },
-};
+}
 </script>
 
 <style>
 #background {
-  background-image: url(../../assets/blue.jpg);
+  /* background-image: url(blue.jpg); */
   background-size: cover;
   height: 800px;
 }
