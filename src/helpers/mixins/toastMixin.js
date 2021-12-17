@@ -3,7 +3,7 @@ export default {
     showToast(title, msg) {
       this.$bvToast.toast(msg, {
         title: title,
-      });
+      })
     },
   },
-};
+}

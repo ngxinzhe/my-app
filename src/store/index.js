@@ -1,20 +1,19 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import { TOKEN, APPID } from "./utils/localStorageKey";
+import Vue from 'vue'
+import Vuex from 'vuex'
+import { TOKEN, APPID } from './utils/localStorageKey'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   strict: true,
   state: {
-    token: localStorage.getItem(TOKEN) || "",
-    appID: "",
-    dashboardID: "",
+    token: localStorage.getItem(TOKEN) || '',
+    appID: '',
   },
 
   getters: {
     getToken: () => {
-      return localStorage.getItem(TOKEN);
+      return localStorage.getItem(TOKEN)
     },
     getAppID: () => {
       return localStorage.getItem(APPID);
@@ -23,21 +22,21 @@ export const store = new Vuex.Store({
 
   mutations: {
     setToken: (state, payload) => {
-      state.token = payload;
-      localStorage.setItem(TOKEN, payload);
+      state.token = payload
+      localStorage.setItem(TOKEN, payload)
     },
     setAppID: (state, payload) => {
-      state.appID = payload;
-      localStorage.setItem(APPID, payload);
+      state.appID = payload
+      localStorage.setItem(APPID, payload)
     },
   },
 
   actions: {
     setTokenAction: (context, payload) => {
-      context.commit("setToken", payload);
+      context.commit('setToken', payload)
     },
     setAppIDAction: (context, payload) => {
-      context.commit("setAppID", payload);
+      context.commit('setAppID', payload)
     },
   },
-});
+})
