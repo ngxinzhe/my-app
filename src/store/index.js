@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { TOKEN, APPID } from './utils/localStorageKey'
+import { setApiDefaults } from './utils/api'
 
 Vue.use(Vuex)
 
@@ -34,6 +35,7 @@ export const store = new Vuex.Store({
   actions: {
     setTokenAction: (context, payload) => {
       context.commit('setToken', payload)
+      setApiDefaults()
     },
     setAppIDAction: (context, payload) => {
       context.commit('setAppID', payload)

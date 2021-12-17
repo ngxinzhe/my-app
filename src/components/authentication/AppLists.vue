@@ -25,7 +25,7 @@ export default {
       apps: [],
     }
   },
-  mounted() {
+  async mounted() {
     const authCode = this.$route.query.code
     const header = {
       'Content-Type': 'application/json',
@@ -39,25 +39,24 @@ export default {
     }
 
     //Exchange token using query code on URL passed from jira authorization page
-    post(tokenExchange, data, header)
-      .then((res) => {
+    await post(tokenExchange, data, header)
+      .then(async (res) => {
         let token = res.data.access_token
-        this.$store.dispatch('setTokenAction', token)
+        await this.$store.dispatch('setTokenAction', token)
       })
       .catch((error) => {
         this.showToast('Error Occurred', error)
       })
 
-    this.getApps()
+    await this.getApps()
   },
   methods: {
-    getApps() {
+    async getApps() {
       const header = {
-        Authorization: `Bearer ${this.$store.getters.getToken}`,
         Accept: 'application/json',
       }
       //Exchange cloud id with token
-      get(cloudidExchange, header)
+      await get(cloudidExchange, header)
         .then((res) => {
           this.apps = [...res.data]
         })

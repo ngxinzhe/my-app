@@ -16,6 +16,7 @@ export function getAccessToken() {
   return localStorage.getItem(TOKEN)
 }
 
+// Set axios default when reload the page
 setApiDefaults()
 
 //axios get function
