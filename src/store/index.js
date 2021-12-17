@@ -9,11 +9,15 @@ export const store = new Vuex.Store({
   state: {
     token: localStorage.getItem(TOKEN) || "",
     appID: "",
+    dashboardID: "",
   },
 
   getters: {
     getToken: () => {
       return localStorage.getItem(TOKEN);
+    },
+    getAppID: () => {
+      return localStorage.getItem(APPID);
     },
   },
 

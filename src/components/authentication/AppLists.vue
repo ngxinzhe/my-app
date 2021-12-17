@@ -69,6 +69,7 @@ export default {
       get(cloudidExchange, header)
         .then((res) => {
           this.apps = [...res.data];
+          console.log(res.data);
         })
         .catch((error) => {
           this.showToast("Error Occurred", error);
